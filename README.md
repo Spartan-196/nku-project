@@ -1,1 +1,1 @@
-# NKU Project Repo
+# James Atkinson's NKU Project Repo
