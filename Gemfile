@@ -11,6 +11,7 @@ gem 'thin'
 gem 'bcrypt'
 gem 'invoicing', '~> 1.0.0' 
 gem 'wicked_pdf'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
