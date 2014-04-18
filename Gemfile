@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'thin'
 gem 'bcrypt'
+gem 'invoicing' 
+gem 'invoicing_generator'
 
 group :development, :test do
   gem 'byebug'
