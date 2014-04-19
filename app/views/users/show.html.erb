@@ -1,0 +1,21 @@
+<strong>Name:</strong>
+      <%= @user.name %> <!-- Shows the Users name -->
+    </p>
+
+    <p>
+      <strong>Nickname:</strong> <!-- Shows the users nickname -->
+      <%= @user.nickname %>
+    </p>
+    <p>
+      <strong>Email:</strong> <!-- Shows the users email -->
+      <%= mail_to @user.email %>
+    </p>
+    <p>
+      <strong>Image:</strong> <!-- Pulls image from the URL source -->
+      <%= image_tag @user.image_url_with_fallback %>
+    </p>
+       <%if @get_current_user && @get_current_user.id == @user.id %>
+         <%= link_to 'Edit', edit_user_path(@user) %>
+         <%= link_to 'Delete Profile', user_path(@user),method: :delete, data: { confirm: 'Perminately Delete Your Profle?' } %>
+      <%end%>
+    <%= link_to 'Back', controller: "users" %>

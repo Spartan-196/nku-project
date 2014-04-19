@@ -1,0 +1,42 @@
+<%= form_for @user do |f| %><!--Calls the ApplicationControllers that are prebuilt into rails for using forms-->
+  <% if @user.errors.any? %><!--Validation check for errors -->
+   <div id="error_explanation"> <!-- if an error is returned. say so -->
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+      this page from being saved:</h2> <!--give error message with count of the errors folled by what they are in level 2 heading-->
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+      <%= f.label :name %><br> <!--Form Title Text -->
+      <%= f.text_field :name %><!--Form Text field (single line) for user-->
+  </p>
+
+  <p>
+    <%= f.label :email %> <br>
+    <%= f.text_field :email%>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%=f.label :image %> <br>
+    <%=f.text_field :image %>
+  </p>
+<%if get_current_user && get_current_user.id == @user.id %>
+<%= link_to 'Delete Profile', user_path(get_current_user),method: :delete, data: { confirm: 'Perminately Delete Your Profle?' } %>
+<%end%>
+  <p class="button">
+    <%= f.submit %> <!-- submit button-->
+  </p>
+<% end %>

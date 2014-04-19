@@ -1,0 +1,34 @@
+<% if flash[:notice] %> <!-- If theres a flash notice load it here at the top in new div section-->
+  <div class="notice"><%= flash[:notice] %> </div>
+<%end%>
+
+<% #if get_current_user.admin? %>
+  <%= form_tag :users_upload, {multipart: true} do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Upload"%>
+  <% #end %>
+<%end %>
+      <table class="table">
+        <thead>Listing All Users</thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+
+        <% @user.each do |user| %> <!--at each post put links to show, edit, and delete-->
+          <tr>
+            <td><%= image_tag(user.image_url_with_fallback, size: "80x80") %></td>
+            <td><%= user.name %></td>
+            <td><%= mail_to user.email %></td>
+            <td><%= link_to 'Show', user %></td>
+          </tr>
+          <tr> <!-- If the current user matches an email address make a new row with options to edit profile and delete profile-->
+            <%if get_current_user && get_current_user.id == user.id %>
+            <td><%= link_to 'Delete Profile', user_path(user),method: :delete, data: { confirm: 'Perminately Delete Your Profle?' } %></td>
+            <td></td>
+            <%end%>
+          </tr>
+        <% end %>
+
