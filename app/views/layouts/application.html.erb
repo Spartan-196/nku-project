@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= image_tag "CPTCHeader3.png" %>
-<%= yield %>
+
+
+  <div class="container">
+    <%= image_tag "CPTCHeader3.png" %>
+    <% if get_current_user == nil %> <!-- if no login show new secctions with sign up/sign in links {will edit later to lok nice-->
+        <p><%= link_to 'Sign up', new_user_path %> <strong>|</strong> <%= link_to 'Sign in', sessions_path %></p>
+        <% else %>
+            <h4>Welcome, <%= get_current_user.name %> | <%= link_to 'Edit Profile', edit_user_path(get_current_user) %> | <%= link_to "Invoices", invoices_path %> |<%= link_to "Sign out", session_path(session), method: :delete, data: { confirm: 'Are you sure you want to sign out?' } %> </h4>
+    <% end %>
+    <% if get_current_user != nil %>
+    <%= link_to 'Create Invoice', new_invoice_path %> | <%= link_to 'View All Invoices', invoices_path%> <br />
+    <% end %>
+  <%= yield %>
+
+  </div>
 
 </body>
 </html>
