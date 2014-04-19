@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if( session[:user_id] == nil )
       return nil
     end
-    return Student.find( session[:user_id] )
+    return User.find( session[:user_id] )
   end
 
   helper_method :get_current_user
@@ -20,4 +20,3 @@ class ApplicationController < ActionController::Base
     end
    end
   end
-end
