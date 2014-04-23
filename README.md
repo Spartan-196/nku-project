@@ -6,10 +6,21 @@ These records will include but are not limited to Account number, Name, Billling
 This page is for internal use only and will not be viewable by customers.
 
 TODO:
+
 Port User signup/signin from nku-rails
+
+force login
+
+admin checks
+
 make invoice with web form
+
 invoice has email address
+
 line item -> with price -> quantities
+
 auto totals
+
 send/preview button
+
 wickedpdf pdf view/button 
