@@ -1,0 +1,61 @@
+<%= form_for @user do |f| %><!--Calls the ApplicationControllers that are prebuilt into rails for using forms-->
+  <% if @user.errors.any? %><!--Validation check for errors -->
+   <div id="error_explanation"> <!-- if an error is returned. say so -->
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+      this page from being saved:</h2> <!--give error message with count of the errors folled by what they are in level 2 heading-->
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <p>
+    <%=f.label "Company %> <br>
+    <%=f.text_field :company_name %>
+  </p>
+  <p>
+      <%= f.label "First Name %><br> <!--Form Title Text -->
+      <%= f.text_field :first_name %><!--Form Text field (single line) for user-->
+  </p>
+  <p>
+    <%=f.label "Last Name  %> <br>
+    <%=f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email %> <br>
+    <%= f.text_field :email%>
+  </p>
+
+  <p>
+    <%= f.label :email_confirmation %><br>
+    <%= f.password_field :email_confirmation %>
+  </p>
+    <p>
+    <%=f.label "Address 1" %> <br>
+    <%=f.text_field :address_1 %>
+  </p>
+    <p>
+    <%=f.label "Address 2 %> <br>
+    <%=f.text_field :address_2 %>
+  </p>
+    <p>
+    <%=f.label "City" %> <br>
+    <%=f.text_field :city %>
+  </p>
+    <p>
+    <%=f.label "State" %> <br>
+    <%=f.text_field :state %>
+  </p>
+    <p>
+    <%=f.label "Zip" %> <br>
+    <%=f.text_field :zip %>
+  </p>
+
+  <% #if get_current_user.admin? %>
+         <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
+  <%end%>
+  <p class="button">
+    <%= f.submit %> <!-- submit button-->
+  </p>
+<% end %>

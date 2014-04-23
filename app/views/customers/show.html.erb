@@ -1,0 +1,12 @@
+<strong>Name:</strong>
+      <%= @customer.name %> <!-- Shows the Users name -->
+    </p>
+
+    <p>
+      <strong>Email:</strong> <!-- Shows the customer email -->
+      <%= mail_to @customer.email %>
+    </p>
+      <% #if get_current_user.admin? %>
+         <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
+      <%end%>
+    <%= link_to 'Back', controller: "customers" %>

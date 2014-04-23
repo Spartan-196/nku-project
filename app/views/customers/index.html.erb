@@ -1,0 +1,39 @@
+<% if flash[:notice] %> <!-- If theres a flash notice load it here at the top in new div section-->
+  <div class="notice"><%= flash[:notice] %> </div>
+<%end%>
+
+<% #if get_current_user.admin? %>
+  <%= form_tag :customers_upload, {multipart: true} do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Upload"%>
+  <% #end %>
+<%end %>
+      <table class="table">
+        <thead>Listing All Customers</thead>
+        <tr>
+          <th>Company Name</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th></th>
+        </tr>
+
+        <% @customer.each do |customer| %>
+          <tr>
+            <td><%= customer.company_name %></td>
+            <td><%= customer.first_name %></td>
+            <td><%=  customer.last_name %></td>
+            <td><%= mail_to customer.email %></td>
+            <td><%=  customer.address_1 %></td>
+            <td><%=  customer.address_2 %></td>
+            <td><%=  customer.city %></td>
+            <td><%=  customer.state %></td>
+            <td><%=  customer.zip %></td>
+            <td><%= link_to 'Show', customer %></td>
+          </tr>
+        <% end %>
