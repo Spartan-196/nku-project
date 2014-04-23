@@ -2,11 +2,11 @@
   <div class="notice"><%= flash[:notice] %> </div>
 <%end%>
 
-<% #if get_current_user.admin? %>
+<% if get_current_user.admin? %>
   <%= form_tag :users_upload, {multipart: true} do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Upload"%>
-  <% #end %>
+  <% end %>
 <%end %>
       <table class="table">
         <thead>Listing All Users</thead>
