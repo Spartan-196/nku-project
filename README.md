@@ -7,11 +7,11 @@ This page is for internal use only and will not be viewable by customers.
 
 TODO:
 
-Port User signup/signin from nku-rails
+~~Port User signup/signin from nku-rails~~
 
-force login
+~~force login~~
 
-admin checks
+~~admin checks~~
 
 make invoice with web form
 
