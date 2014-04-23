@@ -2,10 +2,9 @@ require 'digest'
 
 class User < ActiveRecord::Base
   has_many :invoices
-  has_many :payees
   validates :name, presence: true, length: { minimum: 2 }
   validates :email, presence: true
-  validates :email, uniqueness:true
+  validates :email, uniqueness: true
   has_secure_password
   validates_presence_of :password, :on => :create
   def image_url_with_fallback
