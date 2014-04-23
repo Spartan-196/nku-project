@@ -11,7 +11,6 @@ class Customer < ActiveRecord::Base
   validates  :city, presence: true
   validates  :state, presence: true
   validates  :zip, presence: true, length: { minimum: 5 }
-  validates_presence_of :password, :on => :create
 
 	def self.admin?
   	  if self.admin == true
