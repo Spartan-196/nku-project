@@ -1,16 +1,16 @@
-<%= form_for @user do |f| %><!--Calls the ApplicationControllers that are prebuilt into rails for using forms-->
-  <% if @user.errors.any? %><!--Validation check for errors -->
+<%= form_for @customer do |f| %><!--Calls the ApplicationControllers that are prebuilt into rails for using forms-->
+  <% if @customer.errors.any? %><!--Validation check for errors -->
    <div id="error_explanation"> <!-- if an error is returned. say so -->
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+    <h2><%= pluralize(@customer.errors.count, "error") %> prohibited
       this page from being saved:</h2> <!--give error message with count of the errors folled by what they are in level 2 heading-->
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% @customer.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
   <% end %>
-    <p>
+  <p>
     <%=f.label "Company" %> <br>
     <%=f.text_field :company_name %>
   </p>
@@ -52,7 +52,7 @@
     <%=f.text_field :zip %>
   </p>
 
-  <% #if get_current_user.admin? %>
+  <% if get_current_user.admin? %>
          <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
   <%end%>
   <p class="button">
