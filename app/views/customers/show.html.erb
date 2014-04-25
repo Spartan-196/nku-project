@@ -1,12 +1,31 @@
-<strong>Name:</strong>
-      <%= @customer.name %> <!-- Shows the Users name -->
+    <p>
+    <strong>Company Name:</strong>
+      <%= @customer.company_name %>
+    </p>
+
+   <p>
+    <strong>First Name:</strong>
+      <%= @customer.first_name %>
+    </p>
+    <p>
+    <strong>Last Name:</strong>
+      <%= @customer.last_name %>
     </p>
 
     <p>
-      <strong>Email:</strong> <!-- Shows the customer email -->
+      <strong>Email:</strong>
       <%= mail_to @customer.email %>
     </p>
-      <% #if get_current_user.admin? %>
+
+    <p>
+    <strong>Mailing Address:</strong> </br>
+      <%= @customer.address_1 %> </br>
+      <%= @customer.address_2 %> </br>
+      <%= @customer.city%>, <%= @customer.state %>, <%= @customer.zip %>
+    </p>
+
+
+      <% if get_current_user.admin? %>
          <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
       <%end%>
-    <%= link_to 'Back', controller: "customers" %>
+    <%= link_to 'Back', controller: "customers" %> | <%= link_to 'Edit Profile', edit_customer_path(@customer) %>
