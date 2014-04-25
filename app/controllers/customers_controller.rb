@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer= Customer.new(customer_params)
+    @customer = Customer.new(customer_params)
     if @customer.save #Save input to new customer
       session[:customer_id] = @customer.id	  #generate session ID
       redirect_to customers_path, :notice => "You have registered." #route user back to users with a "sucessful" notification
@@ -17,6 +17,19 @@ class CustomersController < ApplicationController
 	def index
       @customer = Customer.all
 	end
+
+  def upload
+    CustomerUploader.new(params[:file])
+    redirect_to Customers_path
+  end
+
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
+  def edit
+     @customer = Customer.find(params[:id])
+  end
 
   private
     def customer_params
