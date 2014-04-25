@@ -13,7 +13,11 @@ TODO:
 
 ~~admin checks~~
 
-make invoice with web form
+~~Add Customers~~
+
+Edit Customers
+
+Make invoice with web form
 
 invoice has email address
 
@@ -23,4 +27,4 @@ auto totals
 
 send/preview button
 
-wickedpdf pdf view/button 
+wickedpdf pdf view/button
