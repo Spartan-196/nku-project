@@ -15,6 +15,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Phone#</th>
           <th>Address 1</th>
           <th>Address 2</th>
           <th>City</th>
@@ -27,13 +28,14 @@
           <tr>
             <td><%= customer.company_name %></td>
             <td><%= customer.first_name %></td>
-            <td><%=  customer.last_name %></td>
+            <td><%= customer.last_name %></td>
             <td><%= mail_to customer.email %></td>
-            <td><%=  customer.address_1 %></td>
-            <td><%=  customer.address_2 %></td>
-            <td><%=  customer.city %></td>
-            <td><%=  customer.state %></td>
-            <td><%=  customer.zip %></td>
+            <td><%= customer.phone %> </td>
+            <td><%= customer.address_1 %></td>
+            <td><%= customer.address_2 %></td>
+            <td><%= customer.city %></td>
+            <td><%= customer.state %></td>
+            <td><%= customer.zip %></td>
             <td><%= link_to 'Show', customer %></td>
           </tr>
         <% end %>
