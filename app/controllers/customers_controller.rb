@@ -31,6 +31,16 @@ class CustomersController < ApplicationController
      @customer = Customer.find(params[:id])
   end
 
+ def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      flash[:notice] = "Customer updated"
+       redirect_to customers_path
+    else
+      render 'edit'
+    end
+  end
+
   private
     def customer_params
       params.require(:customer).permit(:company_name,:first_name,:last_name,:email, :email_confirmation,:address_1,:address_2,:city,:state,:zip)
