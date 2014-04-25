@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422035545) do
+ActiveRecord::Schema.define(version: 20140425203954) do
 
   create_table "customers", force: true do |t|
     t.string  "first_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140422035545) do
     t.string  "state"
     t.integer "zip",          limit: 5
     t.string  "company_name"
+    t.string  "phone"
   end
 
   create_table "ledger_items", force: true do |t|
