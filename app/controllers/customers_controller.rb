@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save #Save input to new customer
       session[:customer_id] = @customer.id	  #generate session ID
-      redirect_to customers_path, :notice => "You have registered." #route user back to users with a "sucessful" notification
+      redirect_to customers_path, :notice => "You have registered." #route customer back to customers with a "sucessful" notification
     else
       flash[:notice] = "Invalid input please correct"
 	  end
@@ -41,9 +41,18 @@ class CustomersController < ApplicationController
     end
   end
 
+def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    flash[:notice]="Delete Successful"
+    session[:customer_id] = nil
+    @current_customer=nil
+      redirect_to customers_path
+  end
+
   private
     def customer_params
-      params.require(:customer).permit(:company_name,:first_name,:last_name,:email, :email_confirmation,:address_1,:address_2,:city,:state,:zip)
+      params.require(:customer).permit(:company_name,:first_name,:last_name,:email, :email_confirmation,:address_1,:address_2,:city,:state,:zip,:phone)
     end
   end
 
