@@ -27,7 +27,10 @@
       <%= @customer.address_2 %> </br>
       <%= @customer.city%>, <%= @customer.state %>, <%= @customer.zip %>
     </p>
-
+    <p>
+    Customer ID:
+    <%= @customer %>
+    </p>
 
       <% if get_current_user.admin? %>
          <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
