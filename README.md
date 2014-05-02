@@ -1,4 +1,5 @@
 # James Atkinson's NKU Project Repo
+Host: http://atkinsonj3-72805.use1.nitrousbox.com
 
 I will be making a basic customer relations management system that uses active records to store and call data inputted about customers. This change over has come about with the intended use of the Square® as a means to make on the spot invoices when needed. 
 
