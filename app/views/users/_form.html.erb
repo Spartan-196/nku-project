@@ -30,7 +30,7 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%=f.label :image %> <br>
+    <%=f.label "Image URL" %> <br>
     <%=f.text_field :image %>
   </p>
 <%if get_current_user && get_current_user.id == @user.id %>
