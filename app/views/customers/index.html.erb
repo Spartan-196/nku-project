@@ -11,16 +11,16 @@
       <table class="table">
         <thead>Listing All Customers</thead>
         <tr>
-          <th>Company Name</th>
+          <th><%= link_to "Company Name", :sort => "company_name" %></th>
           <th>First Name</th>
-          <th>Last Name</th>
+          <th><%= link_to "Last Name", :sort => "last_name" %></th>
           <th>Email</th>
           <th>Phone#</th>
           <th>Address 1</th>
           <th>Address 2</th>
           <th>City</th>
-          <th>State</th>
-          <th>Zip Code</th>
+          <th><%= link_to "State", :sort => "state" %></th>
+          <th><%= link_to "Zip Code", :sort => "zip" %></th>
           <th></th>
         </tr>
 
