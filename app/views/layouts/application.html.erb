@@ -10,7 +10,7 @@
 
 
  <div class="container">
-    <div class="logo" <%= link_to image_tag("CPTCHeader3.png"),root_path%> </div>
+    <div class="logo"> <%= link_to image_tag("CPTCHeader3.png"),root_path%> </div>
     <div class="navbar navbar-default" rol="navigation">
       <% if get_current_user == nil %>
          <p><%= link_to 'Sign up', new_user_path %> <strong>|</strong> <%= link_to 'Sign in', sessions_path %></p>
@@ -20,7 +20,9 @@
     </div>
     <!--<div class="container panel panel-default">-->
     <% if get_current_user != nil %>
-    <%= link_to 'New Customer', new_customer_path %> |  <%= link_to 'View All Customers', customers_path%> <br />
+    <%= link_to 'New Customer', new_customer_path %> |  <%= link_to 'View All Customers', customers_path%> <% if get_current_user.admin? %>| <%= link_to 'View All Users', users_path%> <%end%>
+
+    <br />
     <% end %>
     <!--</div>-->
     <div class="container">
