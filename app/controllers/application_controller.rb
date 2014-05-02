@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
      before_action :require_login
-
+      skip_before_action :require_login, only: [:new, :create]
     def get_current_user
     # Find whos logged in
     if( session[:user_id] == nil )
