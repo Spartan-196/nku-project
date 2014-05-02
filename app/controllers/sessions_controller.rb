@@ -12,7 +12,7 @@ def create
   user = User.find_by_email(params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id #if user is authenticated set session id to user id
-    redirect_to users_path, :notice => "Logged in!" #redirect to main user page with notice of successful login
+    redirect_to root_path, :notice => "Logged in!" #redirect to main user page with notice of successful login
   else
     flash[:error] = "Invalid email or password" #if auth. fails, vaguely specify that they failed the login
     redirect_to sessions_path
