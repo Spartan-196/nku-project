@@ -32,6 +32,6 @@ working email sends via ~~Google Gmail®~~ Microsoft Outlook.com®
 
 Multiple addresses for each customer
 
-Styling
+~~Styling~~ Some styling added for, close enough for now
 
-Sort Customers Table
+~~Sort Customers Table~~
