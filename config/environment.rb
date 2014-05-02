@@ -12,6 +12,6 @@ ActionMailer::Base.smtp_settings = {
   :domain               => 'outlook.com',
   :authentication       => :login,
   :ssl                  => true,
-  :openssl_verify_mode  => 'none'
-  :enable_starttls_auto => true
+  :openssl_verify_mode  => 'none',
+  :enable_starttls_auto => true,
 }
