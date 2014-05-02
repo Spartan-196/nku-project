@@ -23,6 +23,9 @@
             <td><%= user.name %></td>
             <td><%= mail_to user.email %></td>
             <td><%= link_to 'Show', user %></td>
+            <td><% if get_current_user.admin? %>
+                  <%= link_to 'Delete Profile', user_path(@user),method: :delete_other, data: { confirm: 'Perminately Delete Customer Profle?' } %>
+                <%end%>  </td>
           </tr>
           <tr> <!-- If the current user matches an email address make a new row with options to edit profile and delete profile-->
             <%if get_current_user && get_current_user.id == user.id %>
