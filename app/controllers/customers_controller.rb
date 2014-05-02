@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
 	end
 
 	def index
-      @customer = Customer.all
+      @customer = Customer.order(params[:sort])
 	end
 
   def upload
