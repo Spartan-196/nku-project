@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-
+helper_method :sort_column, :sort_direction
 	def new
 	  @customer = Customer.new
   end
@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
 	end
 
 	def index
-      @customer = Customer.order(params[:sort])
+      @customer = Customer.order(sort_column + " " + sort_direction)
 	end
 
   def upload
@@ -53,6 +53,13 @@ def destroy
   private
     def customer_params
       params.require(:customer).permit(:company_name,:first_name,:last_name,:email, :email_confirmation,:address_1,:address_2,:city,:state,:zip,:phone)
+    end
+    def sort_column
+      Customer.column_names.include?(params[:sort]) ? params[:sort] : "company_name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
   end
 
