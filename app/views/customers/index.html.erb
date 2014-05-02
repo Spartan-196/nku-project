@@ -8,8 +8,10 @@
     <%= submit_tag "Upload"%>
   <% end %>
 <%end %>
+<div class = "panel panel-default">
+  <div class="panel-heading">Listing All Customers</div>
       <table class="table">
-        <thead>Listing All Customers</thead>
+        <thead></thead>
         <tr>
           <th><%= sortable "company_name", "Company Name" %></th>
           <th>First Name</th>
@@ -37,5 +39,7 @@
             <td><%= customer.state %></td>
             <td><%= customer.zip %></td>
             <td><%= link_to 'Show', customer %></td>
-          </tr>
+            <td><%= link_to 'Email' %></td>
         <% end %>
+      </table>
+</div>
