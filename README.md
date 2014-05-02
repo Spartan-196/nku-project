@@ -26,8 +26,8 @@ send email page
 
 send email button
 
-working email sends via Google Gmail®
-
+working email sends via ~~Google Gmail®~~ Microsoft Outlook.com®
+[email railscast for myself](http://railscasts.com/episodes/206-action-mailer-in-rails-3)[send grid demo github gitclone](git clone https://github.com/sendgrid/sendgrid-rails-sample-app.git)
 Multiple addresses for each customer
 
 Styling
