@@ -54,6 +54,15 @@ class UsersController < ApplicationController
       redirect_to users_path
   end
 
+  def destroy_other
+   @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice]="Delete Successful"
+    session[:user_id] = nil
+    @current_user=nil
+      redirect_to users_path
+  end
+
   private
     def user_params
       params.require(:user).permit(:name,:email, :password, :password_confirmation, :image)
