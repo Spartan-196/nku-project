@@ -54,10 +54,11 @@
     <%=f.label "Zip" %> <br>
     <%=f.text_field :zip %>
   </p>
-
+<% if @customer.id != nil %>
   <% if get_current_user.admin? %>
          <%= link_to 'Delete Profile', customer_path(@customer),method: :delete, data: { confirm: 'Perminately Delete Customer Profle?' } %>
   <%end%>
+<%end%>
   <p class="button">
     <%= f.submit %> <!-- submit button-->
   </p>
