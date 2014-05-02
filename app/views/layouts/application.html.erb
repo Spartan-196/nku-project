@@ -17,7 +17,7 @@
             <h4>Welcome, <%= get_current_user.name %> | <%= link_to 'Edit Profile', edit_user_path(get_current_user) %> | <%= link_to "Sign out", session_path(session), method: :delete, data: { confirm: 'Are you sure you want to sign out?' } %> </h4>
     <% end %>
     <% if get_current_user != nil %>
-    <%= link_to 'New Invoice', new_invoice_path %> | <%= link_to 'New Customer', new_customer_path %> | <%= link_to 'View All Invoices', invoices_path%> | <%= link_to 'View All Customers', customers_path%> <br />
+    <%= link_to 'New Customer', new_customer_path %> |  <%= link_to 'View All Customers', customers_path%> <br />
     <% end %>
   <%= yield %>
 
