@@ -10,7 +10,7 @@
 
 
   <div class="container">
-    <%= link_to image_tag("CPTCHeader3.png"),users_path%>
+    <%= link_to image_tag("CPTCHeader3.png"),root_path%>
     <% if get_current_user == nil %> <!-- if no login show new secctions with sign up/sign in links {will edit later to look nice}-->
         <p><%= link_to 'Sign up', new_user_path %> <strong>|</strong> <%= link_to 'Sign in', sessions_path %></p>
         <% else %>
