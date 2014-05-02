@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save #Save input to new user
       session[:user_id] = @user.id	  #generate session ID
-      redirect_to users_path, :notice => "You have registered." #route user back to users with a "sucessful" notification
+      redirect_to root_path, :notice => "You have registered." #route user back to users with a "sucessful" notification
     else
       flash[:notice] = "Invalid input please correct"
       render 'new' #Show form for them to correct invalid entrie
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "User updated"
-       redirect_to users_path
+       redirect_to root_path
     else
       render 'edit'
     end
