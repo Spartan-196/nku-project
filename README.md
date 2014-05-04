@@ -10,7 +10,7 @@ This will ultimate behanded over to an aquantiance of of mine for use on his sit
 
 Thats also where the logo came from, used with their blessing of course.
 
-More styling to come from [bootsnip](http://bootsnipp.com)
+
 
 TO-DO:
 
@@ -33,6 +33,6 @@ working email sends via ~~Google Gmail®~~ Microsoft Outlook.com®
 
 Multiple addresses for each customer
 
-~~Styling~~ Some styling added for, close enough for now
+~~Styling~~ Some styling added for, close enough for now. More styling to come from [bootsnip](http://bootsnipp.com)
 
 ~~Sort Customers Table~~
